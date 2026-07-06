@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>حسابات الألعاب | DevPlay Studio</title>
+  <meta name="description" content="حسابات ألعاب متاحة للبيع بأمان وخصوصية عبر DevPlay Studio" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/themes.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div class="bg-orbs"><span></span><span></span><span></span></div>
+  <header class="site-header glass">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" onerror="this.src='assets/placeholder.svg'" alt="DevPlay Studio" />
+      <div>
+        <strong>DevPlay Studio</strong>
+        <small data-i18n="tagline">حسابات ألعاب موثوقة وآمنة</small>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#accounts" data-i18n="accounts">الحسابات</a>
+      <a href="#how" data-i18n="how">طريقة الطلب</a>
+      <a href="#features" data-i18n="why">لماذا نحن؟</a>
+    </nav>
+
+    <div class="top-actions">
+      <button id="langToggle" class="icon-btn" type="button">EN</button>
+      <button id="themeToggle" class="icon-btn" type="button" aria-label="Theme">☾</button>
+      <a class="whatsapp-mini" target="_blank" href="https://wa.me/201035966569">واتساب</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content glass">
+        <p class="eyebrow" data-i18n="newService">خدمة جديدة</p>
+        <h1 data-i18n="heroTitle">بيع وشراء حسابات الألعاب بأمان وخصوصية</h1>
+        <p data-i18n="heroText">اختر الحساب المناسب، شاهد الكود والسعر والوصف، واطلبه مباشرة عبر واتساب. بيانات البائع والمشتري محفوظة بالكامل.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#accounts" data-i18n="browseAccounts">تصفح الحسابات</a>
+          <a class="btn ghost" target="_blank" href="https://wa.me/201035966569" data-i18n="contactUs">تواصل معنا</a>
+        </div>
+      </div>
+      <div class="hero-art glass">
+        <div class="shield">✓</div>
+        <h3 data-i18n="secureDeal">وسيط موثوق</h3>
+        <p data-i18n="secureDealText">لا يتم تحويل المبلغ للبائع إلا بعد تأكيد استلام الحساب.</p>
+      </div>
+    </section>
+
+    <section id="accounts" class="section">
+      <div class="section-title">
+        <p class="eyebrow" data-i18n="availableNow">متاح الآن</p>
+        <h2 data-i18n="accountsTitle">حسابات الألعاب</h2>
+      </div>
+
+      <div class="filters glass">
+        <div class="field">
+          <label data-i18n="search">بحث</label>
+          <input id="searchInput" type="search" placeholder="ابحث بالكود أو اللعبة أو الاسم" data-placeholder-ar="ابحث بالكود أو اللعبة أو الاسم" data-placeholder-en="Search by code, game, or name" />
+        </div>
+        <div class="field">
+          <label data-i18n="game">اللعبة</label>
+          <select id="gameFilter">
+            <option value="" data-i18n="allGames">كل الألعاب</option>
+          </select>
+        </div>
+        <div class="field">
+          <label data-i18n="minPrice">أقل سعر</label>
+          <input id="minPrice" type="number" min="0" placeholder="0" />
+        </div>
+        <div class="field">
+          <label data-i18n="maxPrice">أعلى سعر</label>
+          <input id="maxPrice" type="number" min="0" placeholder="5000" />
+        </div>
+        <button id="resetFilters" class="btn filter-btn" type="button" data-i18n="reset">إعادة ضبط</button>
+      </div>
+
+      <div class="result-line">
+        <span id="countText">جاري تحميل الحسابات...</span>
+      </div>
+
+      <div id="accountsGrid" class="accounts-grid"></div>
+    </section>
+
+    <section id="features" class="features section">
+      <div class="feature glass"><span>🔒</span><h3 data-i18n="privacy">خصوصية كاملة</h3><p data-i18n="privacyText">لا نشارك بيانات البائع أو المشتري مع أي طرف.</p></div>
+      <div class="feature glass"><span>🛡️</span><h3 data-i18n="guarantee">ضمان للطرفين</h3><p data-i18n="guaranteeText">الصفقة تتم بالوساطة والمتابعة حتى اكتمال التسليم.</p></div>
+      <div class="feature glass"><span>⚡</span><h3 data-i18n="fast">طلب سريع</h3><p data-i18n="fastText">زر واتساب يرسل كود الحساب تلقائيًا للدعم.</p></div>
+    </section>
+
+    <section id="how" class="steps section glass">
+      <h2 data-i18n="howTitle">طريقة الطلب</h2>
+      <div class="step-list">
+        <div><b>1</b><span data-i18n="step1">اختر الحساب المناسب</span></div>
+        <div><b>2</b><span data-i18n="step2">اضغط طلب عبر واتساب</span></div>
+        <div><b>3</b><span data-i18n="step3">أكد التفاصيل مع الدعم</span></div>
+        <div><b>4</b><span data-i18n="step4">استلم الحساب بأمان</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© DevPlay Studio</p>
+    <p data-i18n="footerText">كل خدماتك الرقمية في مكان واحد</p>
+  </footer>
+
+  <script src="js/supabase.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
